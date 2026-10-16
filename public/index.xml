@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Ismael Haque</title>
+		<link>http://localhost:1313/</link>
+		<description>Recent content on Ismael Haque</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 01 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Evaluating Machine Learning Models for Diabetes Classification</title>
+				<link>http://localhost:1313/publications/diabetes_classification/</link>
+				<pubDate>Thu, 01 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/publications/diabetes_classification/</guid>
+				<description>&lt;h2 id=&#34;research-motivation&#34;&gt;Research motivation&lt;/h2&gt;&#xA;&lt;p&gt;Describe the problem your study addresses and why it matters.&lt;/p&gt;&#xA;&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;&#xA;&lt;p&gt;Explain the dataset, preprocessing steps, models, experimental design,&#xA;and evaluation metrics.&lt;/p&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;p&gt;Summarize the findings and the most important results.&lt;/p&gt;&#xA;&lt;h2 id=&#34;limitations&#34;&gt;Limitations&lt;/h2&gt;&#xA;&lt;p&gt;Discuss the limitations of the dataset, methodology, or experiments.&lt;/p&gt;&#xA;&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;&#xA;&lt;p&gt;Explain the key takeaway and potential future research directions.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>django backend implementation from kaira-template</title>
+				<link>http://localhost:1313/projects/django-backend-implementation-from-kaira-template/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/django-backend-implementation-from-kaira-template/</guid>
+				<description>&lt;p&gt;An implementation of backend implementation using django.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Django-rest-framework-Blogpost-API</title>
+				<link>http://localhost:1313/projects/django-rest-framework-blogpost-api/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/django-rest-framework-blogpost-api/</guid>
+				<description>&lt;p&gt;An implementation of backend implementation using django.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Huggingface Image to Text</title>
+				<link>http://localhost:1313/projects/huggingface-image-to-text/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/huggingface-image-to-text/</guid>
+				<description>&lt;p&gt;This project showcases MLOps strategey using hugginface hub as deployment destination.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Huggingface Text Summarizer</title>
+				<link>http://localhost:1313/projects/huggingface-text-summarizer/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/huggingface-text-summarizer/</guid>
+				<description>&lt;p&gt;An implementation of MLOps using huggingface text summarizer model.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>News Alert system</title>
+				<link>http://localhost:1313/projects/news-alertsystem/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/news-alertsystem/</guid>
+				<description>&lt;p&gt;An implementation of news-alert system by scraping news-outlets.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

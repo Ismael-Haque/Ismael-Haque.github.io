@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description" content="Personal portfolio and CV of Ismael Haque, focused on Machine Learning, Generative AI, and Agentic AI.">
+    
+    <script>
+        (function () {
+            try {
+                const savedTheme = localStorage.getItem("site-theme");
+                if (savedTheme === "dark" || savedTheme === "light") {
+                    document.documentElement.setAttribute("data-theme", savedTheme);
+                }
+            } catch (error) {
+                // Use the default light theme if storage is unavailable.
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+    {{ block "main" . }}{{ end }}
+    <script src="{{ "js/theme.js" | relURL }}" defer></script>
+</body>
+</html>

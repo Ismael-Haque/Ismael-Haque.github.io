@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Projects on Ismael Haque</title>
+		<link>http://localhost:1313/projects/</link>
+		<description>Recent content in Projects on Ismael Haque</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>django backend implementation from kaira-template</title>
+				<link>http://localhost:1313/projects/django-backend-implementation-from-kaira-template/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/django-backend-implementation-from-kaira-template/</guid>
+				<description>&lt;p&gt;An implementation of backend implementation using django.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Django-rest-framework-Blogpost-API</title>
+				<link>http://localhost:1313/projects/django-rest-framework-blogpost-api/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/django-rest-framework-blogpost-api/</guid>
+				<description>&lt;p&gt;An implementation of backend implementation using django.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Huggingface Image to Text</title>
+				<link>http://localhost:1313/projects/huggingface-image-to-text/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/huggingface-image-to-text/</guid>
+				<description>&lt;p&gt;This project showcases MLOps strategey using hugginface hub as deployment destination.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Huggingface Text Summarizer</title>
+				<link>http://localhost:1313/projects/huggingface-text-summarizer/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/huggingface-text-summarizer/</guid>
+				<description>&lt;p&gt;An implementation of MLOps using huggingface text summarizer model.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>News Alert system</title>
+				<link>http://localhost:1313/projects/news-alertsystem/</link>
+				<pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/news-alertsystem/</guid>
+				<description>&lt;p&gt;An implementation of news-alert system by scraping news-outlets.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

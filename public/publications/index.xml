@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Publications on Ismael Haque</title>
+		<link>http://localhost:1313/publications/</link>
+		<description>Recent content in Publications on Ismael Haque</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 01 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/publications/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Evaluating Machine Learning Models for Diabetes Classification</title>
+				<link>http://localhost:1313/publications/diabetes_classification/</link>
+				<pubDate>Thu, 01 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/publications/diabetes_classification/</guid>
+				<description>&lt;h2 id=&#34;research-motivation&#34;&gt;Research motivation&lt;/h2&gt;&#xA;&lt;p&gt;Describe the problem your study addresses and why it matters.&lt;/p&gt;&#xA;&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;&#xA;&lt;p&gt;Explain the dataset, preprocessing steps, models, experimental design,&#xA;and evaluation metrics.&lt;/p&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;p&gt;Summarize the findings and the most important results.&lt;/p&gt;&#xA;&lt;h2 id=&#34;limitations&#34;&gt;Limitations&lt;/h2&gt;&#xA;&lt;p&gt;Discuss the limitations of the dataset, methodology, or experiments.&lt;/p&gt;&#xA;&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;&#xA;&lt;p&gt;Explain the key takeaway and potential future research directions.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,894 @@
+/* =========================
+   1. Global styles
+========================= */
+
+
+:root {
+    color-scheme: light;
+
+    --background: #f7f8fa;
+    --surface: #ffffff;
+    --text: #202938;
+    --muted: #687386;
+    --accent: #3157a4;
+    --accent-light: #edf2ff;
+    --border: #e4e8ef;
+    --sidebar-width: 260px;
+}
+
+/* Dark theme colors */
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --background: #111827;
+    --surface: #1f2937;
+    --text: #f3f4f6;
+    --muted: #b0bac9;
+    --accent: #93b4ff;
+    --accent-light: #293957;
+    --border: #374151;
+}
+
+/* Smooth color transition */
+body,
+.sidebar,
+.main-content,
+.portfolio-card {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* =========================
+   2. Page layout
+========================= */
+
+.page-wrapper {
+    min-height: 100vh;
+}
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: var(--sidebar-width);
+    padding: 42px 28px 24px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.main-content {
+    width: calc(100% - var(--sidebar-width));
+    max-width: 1200px;
+    min-height: 100vh;
+    margin-left: var(--sidebar-width);
+    padding: 56px clamp(28px, 6vw, 84px) 32px;
+}
+
+/* =========================
+   3. Sidebar
+========================= */
+
+.profile-link {
+    display: block;
+    width: 164px;
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.profile-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    object-position: center top;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--background);
+}
+
+.sidebar-name {
+    margin: 0 0 4px;
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: -0.7px;
+}
+
+.sidebar-role {
+    margin: 0 0 28px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 10px 13px;
+    color: var(--text);
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: var(--accent-light);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.sidebar-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    font-size: 13px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 32px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================
+   4. Hero / introduction
+========================= */
+
+.hero {
+    padding-bottom: 34px;
+    border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.hero h1 {
+    margin: 0 0 8px;
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.hero h2 {
+    margin: 0 0 18px;
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.intro {
+    max-width: 690px;
+    margin: 0 0 22px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.contact-details a {
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   5. CV sections
+========================= */
+
+.cv-section {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+    position: relative;
+    margin: 0 0 23px;
+    padding-left: 14px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.section-title::before {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 0;
+    width: 4px;
+    background: var(--accent);
+    border-radius: 4px;
+    content: "";
+}
+
+/* =========================
+   6. Technical skills
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.skill-card {
+    padding: 17px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.skill-card h3 {
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.skill-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =========================
+   7. Experience & education
+========================= */
+
+.timeline-item {
+    padding: 0 0 6px;
+}
+
+.timeline-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.timeline-heading h3,
+.language-card h3 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.organization {
+    margin: 4px 0 0;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.date {
+    flex-shrink: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.experience-list {
+    margin: 18px 0 0;
+    padding-left: 20px;
+    color: var(--muted);
+}
+
+.experience-list li {
+    margin-bottom: 8px;
+    padding-left: 3px;
+}
+
+/* =========================
+   8. Certificate cards
+========================= */
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.certificate-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(26, 39, 66, 0.07);
+}
+
+.certificate-card>a:first-child {
+    display: block;
+    padding: 12px;
+    background: #f0f2f6;
+}
+
+.certificate-card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.certificate-info {
+    padding: 15px;
+}
+
+.certificate-info h3 {
+    margin: 0 0 5px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.certificate-info p {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.certificate-info a {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================
+   9. IELTS scores
+========================= */
+
+.ielts-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.ielts-summary {
+    padding: 24px;
+    background: var(--accent-light);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ielts-summary .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.overall-score {
+    color: var(--accent);
+    font-size: 54px;
+    font-weight: 750;
+    line-height: 1.2;
+}
+
+.score-label {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.score-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.score-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.score-row strong {
+    font-variant-numeric: tabular-nums;
+}
+
+.document-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================
+   10. Japanese proficiency
+========================= */
+
+.language-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 19px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.language-card p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.language-card a {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================
+   11. Footer
+========================= */
+
+.main-footer {
+    padding: 24px 0;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* =========================
+   12. Responsive design
+========================= */
+
+@media (min-width: 1500px) {
+    .main-content {
+        margin-right: auto;
+        margin-left: var(--sidebar-width);
+    }
+}
+
+@media (max-width: 1050px) {
+    :root {
+        --sidebar-width: 220px;
+    }
+
+    .sidebar {
+        padding: 32px 22px 20px;
+    }
+
+    .profile-link {
+        width: 145px;
+    }
+
+    .main-content {
+        padding: 42px 30px 24px;
+    }
+
+    .certificate-grid {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 760px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        padding: 24px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-link {
+        width: 120px;
+        margin-bottom: 14px;
+    }
+
+    .sidebar-name {
+        font-size: 22px;
+    }
+
+    .sidebar-role {
+        margin-bottom: 18px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .sidebar-nav a {
+        padding: 8px 12px;
+    }
+
+    .sidebar-social {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 18px;
+    }
+
+    .sidebar-footer {
+        margin-top: 18px;
+        padding-top: 0;
+    }
+
+    .main-content {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        padding: 32px 24px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .skills-grid,
+    .certificate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .skills-grid,
+    .certificate-grid,
+    .ielts-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-heading {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .certificate-card img {
+        height: 200px;
+    }
+
+    .language-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* Project and publication card grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 28px;
+}
+
+/* Individual cards */
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(20, 30, 50, 0.03);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Hover animation */
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 26px rgba(20, 30, 50, 0.09);
+}
+
+.portfolio-card h2 {
+    margin: 0 0 14px;
+    font-size: 1.2rem;
+    line-height: 1.45;
+    color: var(--text);
+}
+
+.card-description {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.card-description p {
+    margin-top: 0;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 14px;
+}
+
+.project-tag {
+    padding: 5px 10px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 0.78rem;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 18px;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card-link span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.card-link:hover span {
+    transform: translateX(4px);
+}
+
+.publication-authors {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.publication-venue {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.page-intro {
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 680px;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .portfolio-card,
+    .card-link span {
+        transition: none;
+    }
+
+    .portfolio-card:hover {
+        transform: none;
+    }
+}
+
+
+/* Dark mode toggle button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 24px;
+    padding: 11px 14px;
+
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font: inherit;
+    font-size: 0.92rem;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+#theme-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 18px;
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+.project-links .card-link {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+/* Individual publication page */
+.publication-detail {
+    max-width: 900px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.publication-header {
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+}
+
+.publication-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.25;
+    margin: 10px 0 18px;
+    color: var(--text);
+}
+
+.publication-section {
+    padding: 22px;
+    margin-bottom: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.publication-section h2 {
+    margin-top: 0;
+    color: var(--text);
+}
+
+.publication-section p,
+.publication-body {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.publication-body h2,
+.publication-body h3 {
+    color: var(--text);
+    margin-top: 26px;
+}
+
+.publication-body a {
+    color: var(--accent);
+}
+
+.publication-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.publication-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.publication-button {
+    display: inline-block;
+    padding: 10px 16px;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.publication-button:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+}

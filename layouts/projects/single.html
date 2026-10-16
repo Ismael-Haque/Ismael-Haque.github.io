@@ -1,0 +1,71 @@
+
+{{ define "main" }}
+<div class="page-wrapper">
+    <aside class="sidebar">
+        <a href="{{ "/" | relURL }}" class="profile-link">
+            <img
+                src="{{ "images/profile.jpg" | relURL }}"
+                alt="Profile photo"
+                class="profile-image"
+            >
+        </a>
+
+        <h2 class="sidebar-name">Ismael Haque</h2>
+        <p class="sidebar-role">Machine Learning · Gen AI · Agentic AI</p>
+
+        <nav class="sidebar-nav">
+            <a href="{{ "/" | relURL }}">Home</a>
+            <a href="{{ "projects/" | relURL }}" class="active">Projects</a>
+            <a href="{{ "publications/" | relURL }}">Publications</a>
+        </nav>
+
+        <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+            <span id="theme-icon" aria-hidden="true">☾</span>
+            <span id="theme-label">Dark mode</span>
+        </button>
+    </aside>
+
+    <main class="main-content">
+        <a class="back-link" href="{{ "projects/" | relURL }}">
+            ← Back to projects
+        </a>
+
+        <header class="hero">
+            <p class="eyebrow">PROJECT</p>
+            <h1>{{ .Title }}</h1>
+            {{ with .Params.technologies }}
+            <div class="project-tags">
+                {{ range . }}
+                <span class="project-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+        </header>
+
+        <article class="publication-section">
+            {{ .Content }}
+        </article>
+
+        <div class="publication-actions">
+            {{ with .Params.demo_url }}
+            <a class="publication-button"
+               href="{{ . }}"
+               target="_blank"
+               rel="noopener noreferrer">Live demo ↗</a>
+            {{ end }}
+
+            {{ with .Params.github_url }}
+            <a class="publication-button"
+               href="{{ . }}"
+               target="_blank"
+               rel="noopener noreferrer">GitHub repository ↗</a>
+            {{ end }}
+        </div>
+    </main>
+</div>
+{{ end }}

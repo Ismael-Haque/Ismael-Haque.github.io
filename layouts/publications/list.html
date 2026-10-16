@@ -1,0 +1,94 @@
+
+{{ define "main" }}
+<div class="page-wrapper">
+    <aside class="sidebar">
+        <a href="{{ "/" | relURL }}" class="profile-link">
+            <img
+                src="{{ "images/profile.jpg" | relURL }}"
+                alt="Profile photo"
+                class="profile-image"
+            >
+        </a>
+
+        <h2 class="sidebar-name">Ismael Haque</h2>
+        <p class="sidebar-role">Machine Learning · Gen AI · Agentic AI</p>
+
+        <nav class="sidebar-nav" aria-label="Main navigation">
+            <a href="{{ "/" | relURL }}">Home</a>
+            <a href="{{ "projects/" | relURL }}">Projects</a>
+            <a href="{{ "publications/" | relURL }}" class="active">
+                Research Interests & Publications
+            </a>
+        </nav>
+        
+        <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+            <span id="theme-icon" aria-hidden="true">☾</span>
+            <span id="theme-label">Dark mode</span>
+        </button>
+
+        <div class="sidebar-social">
+            <a href="https://peerlist.io/ismaelhaque" target="_blank" rel="noopener noreferrer">Peerlist ↗</a>
+            <a href="https://github.com/Ismael-Haque" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="mailto:ismaelhaque.dev@gmail.com">Email ↗</a>
+        </div>
+
+        <p class="sidebar-footer">© {{ now.Year }} Ismael Haque</p>
+    </aside>
+
+    <main class="main-content">
+        <header class="hero">
+            <p class="eyebrow">RESEARCH</p>
+            <h1>Publications</h1>
+            <p class="page-intro">
+                Research papers, conference submissions, and other
+                academic contributions.
+            </p>
+        </header>
+
+        <div class="portfolio-grid">
+            {{ range .Pages.ByDate.Reverse }}
+            <article class="portfolio-card">
+                <h2>{{ .Title }}</h2>
+
+                {{ with .Params.authors }}
+                <p class="publication-authors">{{ . }}</p>
+                {{ end }}
+
+                {{ with .Params.venue }}
+                <p class="publication-venue">{{ . }}</p>
+                {{ end }}
+
+                <div class="card-description">
+                    {{ with .Description }}
+                        <p>{{ . }}</p>
+                    {{ else }}
+                        {{ .Summary }}
+                    {{ end }}
+                </div>
+
+                
+                <a class="card-link" href="{{ .RelPermalink }}">
+                    View publication details <span aria-hidden="true">→</span>
+                </a>
+
+                {{ with .Params.paper_url }}
+                <a class="card-link"
+                href="{{ . }}"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Read paper ↗
+                </a>
+                {{ end }}
+            </article>
+            {{ else }}
+            <p>Publications will be added here soon.</p>
+            {{ end }}
+        </div>
+    </main>
+</div>
+{{ end }}

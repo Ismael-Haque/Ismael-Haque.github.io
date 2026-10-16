@@ -1,0 +1,129 @@
+
+{{ define "main" }}
+<div class="page-wrapper">
+    <aside class="sidebar">
+        <a href="{{ "/" | relURL }}" class="profile-link">
+            <img
+                src="{{ "images/profile.jpg" | relURL }}"
+                alt="Profile photo"
+                class="profile-image"
+            >
+        </a>
+
+        <h2 class="sidebar-name">Ismael Haque</h2>
+        <p class="sidebar-role">Machine Learning · Gen AI · Agentic AI</p>
+
+        <nav class="sidebar-nav" aria-label="Main navigation">
+            <a href="{{ "/" | relURL }}">Home</a>
+            <a href="{{ "projects/" | relURL }}">Projects</a>
+            <a href="{{ "publications/" | relURL }}" class="active">
+                Publications
+            </a>
+        </nav>
+
+        <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+            <span id="theme-icon" aria-hidden="true">☾</span>
+            <span id="theme-label">Dark mode</span>
+        </button>
+    </aside>
+
+    <main class="main-content publication-detail">
+        <a class="back-link" href="{{ "publications/" | relURL }}">
+            ← Back to publications
+        </a>
+
+        <header class="publication-header">
+            <p class="eyebrow">RESEARCH PUBLICATION</p>
+            <h1>{{ .Title }}</h1>
+
+            {{ with .Params.authors }}
+            <p class="publication-authors">{{ . }}</p>
+            {{ end }}
+
+            {{ with .Params.venue }}
+            <p class="publication-venue">{{ . }}</p>
+            {{ end }}
+
+            {{ with .Params.status }}
+            <p class="publication-status">{{ . }}</p>
+            {{ end }}
+        </header>
+
+        <section class="publication-section">
+            <h2>Abstract</h2>
+
+            {{ with .Params.abstract }}
+            <p>{{ . }}</p>
+            {{ else }}
+            <div class="publication-body">
+                {{ .Content }}
+            </div>
+            {{ end }}
+        </section>
+
+        {{ with .Params.keywords }}
+        <section class="publication-section">
+            <h2>Keywords</h2>
+            <div class="project-tags">
+                {{ range . }}
+                <span class="project-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+
+        {{ with .Params.doi }}
+        <section class="publication-section">
+            <h2>Publication details</h2>
+            <p>
+                DOI:
+                <a href="https://doi.org/{{ . }}"
+                   target="_blank"
+                   rel="noopener noreferrer">{{ . }}</a>
+            </p>
+        </section>
+        {{ end }}
+
+        <section class="publication-section">
+            <h2>Full details</h2>
+            <div class="publication-body">
+                {{ .Content }}
+            </div>
+        </section>
+
+        <div class="publication-actions">
+            {{ with .Params.paper_url }}
+            <a class="publication-button"
+               href="{{ . }}"
+               target="_blank"
+               rel="noopener noreferrer">
+                Read paper ↗
+            </a>
+            {{ end }}
+
+            {{ with .Params.pdf_url }}
+            <a class="publication-button"
+               href="{{ . }}"
+               target="_blank"
+               rel="noopener noreferrer">
+                View PDF ↗
+            </a>
+            {{ end }}
+
+            {{ with .Params.code_url }}
+            <a class="publication-button"
+               href="{{ . }}"
+               target="_blank"
+               rel="noopener noreferrer">
+                Source code ↗
+            </a>
+            {{ end }}
+        </div>
+    </main>
+</div>
+{{ end }}
